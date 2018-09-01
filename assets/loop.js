@@ -1,0 +1,6 @@
+const bootstrap = () => {
+    requestAnimationFrame(() => {
+
+        bootstrap();
+    })
+}
