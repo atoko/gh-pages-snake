@@ -1,0 +1,52 @@
+#game-render-target {
+    display: flex;
+}
+
+#game-grid {
+    margin: auto;
+}
+
+#game-grid .block.snake {
+    background-color: green;
+}
+
+#game-grid .block.snake-head {
+    background-color: greenyellow;
+}
+
+#game-grid .block.snake-tail {
+    background-color: limegreen;
+}
+
+#game-grid .block.dot {
+    background-color: yellow;
+}
+
+
+#game-grid .block {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    border: 1px solid black;
+}
+
+@media (max-width: 767px) {
+    #game-grid .block {
+        width: 0.8em;
+        height: 0.8em;
+    }
+}
+
+@media (max-width: 490px) {
+    #game-grid .block {
+        width: 0.6em;
+        height: 0.6em;
+    }
+}
+
+@media (max-width: 376px) {
+    #game-grid .block {
+        width: 0.5em;
+        height: 0.5em;
+    }
+}
