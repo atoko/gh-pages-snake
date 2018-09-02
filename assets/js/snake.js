@@ -36,18 +36,18 @@ const game = (() => {
         let {x, y} = snakeNextFrame;
     
         if (x < 0 || x > GAME_WIDTH - 1) {
-            return { gameOver: true, ...state };
+            return { ...state,  gameOver: true };
         } 
     
         if (y < 0 || y > GAME_HEIGHT - 1) {
-            return { gameOver: true, ...state };
+            return { ...state, gameOver: true };
         }
 
-        let collidedWithTrail = snakeTrail.reduce((collided, trail) => {
+        let collidedWithTrail = snakeTrail.length > 1 && snakeTrail.reduce((collided, trail) => {
             return collided || (x === trail.x && y === trail.y)
         }, false);
         if (collidedWithTrail) {
-            return { gameOver: true, ...state };
+            return { ...state, gameOver: true };
         }
     
         let pointsNextFrame = points;
@@ -93,6 +93,7 @@ const game = (() => {
         snakeTrail: [{ x: GAME_WIDTH / 2, y: GAME_HEIGHT / 2 }],
         dots: [],
         points: 0,
+        gameOver: false,
         GAME_HEIGHT,
         GAME_WIDTH
     })

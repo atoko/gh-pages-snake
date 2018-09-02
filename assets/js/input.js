@@ -25,21 +25,36 @@ const input = (() => {
     });
 
     const left = () => {
+        if (horizontalInput === 1) {
+            return;
+        }
         horizontalInput = -1;
         verticalInput = 0;
     }
 
     const right = () => {
+        if (horizontalInput === -1) {
+            return;
+        }
+
         horizontalInput = 1;
         verticalInput = 0;
     }
 
     const up = () => {
+        if (verticalInput === 1) {
+            return;
+        }
+
         horizontalInput = 0;
         verticalInput = -1;
     }
 
     const down = () => {
+        if (verticalInput === -1) {
+            return;
+        }
+
         horizontalInput = 0;
         verticalInput = 1;        
     }
