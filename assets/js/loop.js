@@ -4,7 +4,8 @@ const loop = (() => {
     let timeStep = 20;
     let paused = false;
 
- 
+    touch.initialize(document);
+
     const tick = (timestamp) => {
         const delta = timestamp - lastTimestamp;
         if (delta > timeStep) {
@@ -21,10 +22,11 @@ const loop = (() => {
             }
             lastTimestamp = timestamp;            
 
-            render(state);            
+            render(state, { isPaused: paused });            
         }
 
         if (!paused) {
+            touch.poll();
             requestAnimationFrame(tick);
         }
     }
@@ -42,6 +44,8 @@ const loop = (() => {
         },
         newGame: () => {
             state = game.reducer(undefined, game.actions.newGame());
+            input.reset();
+            paused = false;
         }
     }
 })()

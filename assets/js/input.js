@@ -2,32 +2,53 @@ const input = (() => {
     let horizontalInput = 0;
     let verticalInput = 0;
 
+
     document.addEventListener("keydown", (event) => {
         switch(event.key) {
             case "Down": // IE specific value
             case "ArrowDown":
-                horizontalInput = 0;
-                verticalInput = 1;
+                down();
                 break;
             case "Up": // IE specific value
             case "ArrowUp":
-                horizontalInput = 0;
-                verticalInput = -1;
+                up();
                 break;
             case "Left": // IE specific value
             case "ArrowLeft":
-                horizontalInput = -1;
-                verticalInput = 0;
+                left();
                 break;
             case "Right": // IE specific value
             case "ArrowRight":
-                horizontalInput = 1;
-                verticalInput = 0;
+                right()
                 break;
         }
     });
-    
+
+    const left = () => {
+        horizontalInput = -1;
+        verticalInput = 0;
+    }
+
+    const right = () => {
+        horizontalInput = 1;
+        verticalInput = 0;
+    }
+
+    const up = () => {
+        horizontalInput = 0;
+        verticalInput = -1;
+    }
+
+    const down = () => {
+        horizontalInput = 0;
+        verticalInput = 1;        
+    }
+
     return {
+        left,
+        right,
+        up,
+        down,
         getHorizontal: () => {
             return horizontalInput;
         },
