@@ -1,0 +1,12 @@
+#header-render-target {
+    font-family: 'Righteous'
+}
+
+#header-render-target .header-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+#header-render-target .header-points {
+
+}

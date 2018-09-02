@@ -11,15 +11,14 @@ const Header = (() => {
             const { state } = props;
             if (state) {
                 const { points } = state;
-                return h('ul', null, [
-                        h('li', null, points),
-                        h('li', null, 
+                return h('ul', { class: 'header-container' }, [
+                        h('li', { class: 'header-points'}, [
+                            h('label', null, 'Points'),
+                            h('div', null, points)
+                        ]),
+                        h('li', { class: 'header-reset' }, 
                             h('button', { onClick: this.reset}, 'reset')
                         ),
-
-                        h('li', null, 
-                            h('button', { onClick: this.pause}, 'pause')
-                        )                        
                     ]
                 );
             } else {

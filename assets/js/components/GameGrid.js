@@ -12,11 +12,11 @@ const GameGrid = (() => {
                         state.snakeTrail.forEach((snake, i) => {
                             if (snake.x === x && snake.y === y) {
                                 content = 'snake'
-                                if (i === 0) {
-                                    content = 'snake-head';
-                                }
                                 if (i === state.snakeTrail.length - 1) {
                                     content = 'snake-tail';
+                                }                                
+                                if (i === 0) {
+                                    content = 'snake-head';
                                 }
                             }
                         });
@@ -26,7 +26,21 @@ const GameGrid = (() => {
                             }
                         })
 
-                        children.push(h('div', { class: 'block ' + content}, ''));
+                        let modifier = '';
+                        if (x === 0) {
+                            modifier = "left-wall";
+                        }
+                        if (x === state.GAME_WIDTH - 1) {
+                            modifier = "right-wall";
+                        }
+                        if (y === 0) {
+                            modifier += " top-wall"
+                        }
+                        if (y === state.GAME_HEIGHT - 1) {
+                            modifier += " bottom-wall"
+                        }
+
+                        children.push(h('div', { class: `block ${modifier} ${content}`}, ''));
                     }   
                     children.push(h('br'));
                 }

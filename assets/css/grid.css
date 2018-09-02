@@ -11,15 +11,16 @@
 }
 
 #game-grid .block.snake-head {
-    background-color: greenyellow;
-}
-
-#game-grid .block.snake-tail {
     background-color: limegreen;
 }
 
+#game-grid .block.snake-tail {
+    background-color: green;
+}
+
 #game-grid .block.dot {
-    background-color: yellow;
+    background-color: orange;
+    border-radius: 16px;
 }
 
 
@@ -27,8 +28,21 @@
     display: inline-block;
     width: 1.2em;
     height: 1.2em;
-    border: 1px solid rgba(210, 210, 210, 0.5);
+    border: 1px solid rgba(210, 210, 210, 0.1);
     box-sizing: border-box;    
+}
+
+#game-grid .block.bottom-wall {
+    border-bottom: 1px solid rgba(210, 210, 210, 0.4);
+}
+#game-grid .block.top-wall {
+    border-top: 1px solid rgba(210, 210, 210, 0.4);
+}
+#game-grid .block.left-wall {
+    border-left: 1px solid rgba(210, 210, 210, 0.4);
+}
+#game-grid .block.right-wall {
+    border-right: 1px solid rgba(210, 210, 210, 0.4);
 }
 
 @media (max-width: 767px) {

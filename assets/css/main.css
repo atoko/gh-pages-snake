@@ -1,0 +1,26 @@
+body {
+    background-color: #000000;
+    color: #DDDDDD;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: block;
+}
+
+button {
+    height: 3em;
+    width: 8em;
+    font-family: inherit;
+    color: inherit;
+
+    text-transform: uppercase;
+    font-size: 1em;
+    background-image: linear-gradient(to right, #9d50bb, #6e48aa);
+    border: 1px solid #dddddd;
+    box-shadow: #cccccc 1px 1px 1px;
+    border-radius: 4px;
+}
