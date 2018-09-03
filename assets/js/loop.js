@@ -1,8 +1,9 @@
 const loop = (() => {
-    let state;
-    let lastTimestamp;
-    let timeStep;
-    let paused;
+    let state = null;
+    let lastTimestamp = 0;
+    let timeStep = 30;
+    let paused = false;
+    let loopId = null;
 
     return {
         setTimestep: (value) => {
@@ -22,7 +23,6 @@ const loop = (() => {
         bootstrap: () => {
             state = game.reducer(undefined, game.actions.newGame());
             lastTimestamp = performance.now();
-            timeStep = 30;
             paused = false;
 
             touch.initialize(document);
@@ -47,14 +47,19 @@ const loop = (() => {
         
                     lastTimestamp = timestamp;            
         
-                    render(state, { isPaused: paused });            
+                    render.game(state, { isPaused: paused });            
                 }
         
                 if (!paused) {
-                    requestAnimationFrame(tick);
+                    loopId = requestAnimationFrame(tick);
                 }
             }
             return () => requestAnimationFrame(tick)        
+        },
+        stop: () => {
+            if (loopId) {
+                cancelAnimationFrame(loopId);
+            }
         }
     }
 })()

@@ -1,5 +1,7 @@
 var td = require("testdouble");
 
 module.exports = () => {
-    return td.func();
+    return {
+        game: td.func()
+    }
 }

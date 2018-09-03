@@ -1,10 +1,15 @@
-#header-render-target {
-    font-family: 'Righteous'
-}
-
 #header-render-target .header-container {
     display: flex;
     justify-content: space-around;
+    padding-top: 1em;
+    padding-left: 1em;
+}
+#header-render-target ul {
+    list-style: none;
+}
+
+#header-render-target li {
+    display: block;
 }
 
 #header-render-target .header-points {

@@ -2,7 +2,7 @@ const Header = (() => {
     const { Component, h } = preact;
     class Header extends Component {
         reset() {
-            loop.newGame();
+            menu.show();
         }
         pause() {
             loop.pause();
