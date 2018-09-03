@@ -1,0 +1,23 @@
+{
+  "name": "gh-snake-tests",
+  "version": "1.0.0",
+  "description": "Testing tools for gh-pages-snake",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atoko/gh-pages-snake.git"
+  },
+  "author": "Pedro Cardona",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atoko/gh-pages-snake/issues"
+  },
+  "homepage": "https://github.com/atoko/gh-pages-snake#readme",
+  "devDependencies": {
+    "jest": "^23.5.0",
+    "testdouble": "^3.8.1"
+  }
+}

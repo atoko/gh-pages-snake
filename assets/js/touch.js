@@ -125,6 +125,11 @@ const touch = (() => {
             element.addEventListener("touchmove", onTouchMove, { passive: false });
             element.addEventListener("touchend", onTouchEnd, { passive: false });    
         },
+        teardown: (element) => {
+            element.removeEventListener("touchstart", onTouchStart);
+            element.removeEventListener("touchmove", onTouchMove);
+            element.removeEventListener("touchend", onTouchEnd);    
+        },
         poll: () => {
             if (up()) {
                 input.up();
