@@ -2,8 +2,7 @@ const input = (() => {
     let horizontalInput = 0;
     let verticalInput = 0;
 
-
-    document.addEventListener("keydown", (event) => {
+    const listener = (event) => {
         switch(event.key) {
             case "Down": // IE specific value
             case "ArrowDown":
@@ -22,7 +21,7 @@ const input = (() => {
                 right()
                 break;
         }
-    });
+    };
 
     const left = () => {
         if (horizontalInput === 1) {
@@ -60,6 +59,12 @@ const input = (() => {
     }
 
     return {
+        initialize: (element) => {
+            element.addEventListener("keydown", listener);    
+        },
+        teardown: (element) => {
+            element.removeEventListener("keydown", listener);
+        },
         left,
         right,
         up,

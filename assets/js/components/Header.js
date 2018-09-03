@@ -17,7 +17,7 @@ const Header = (() => {
                             h('div', null, points)
                         ]),
                         h('li', { class: 'header-reset' }, 
-                            h('button', { onClick: this.reset}, 'reset')
+                            h('button', { onClick: this.reset}, 'menu')
                         ),
                     ]
                 );
